@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewpoint" content="width=device-width,ibitial-scale=1.0">
+        <title>Student Registration Form</title>
+        <link rel="stylesheet" href="student.css">
+    </head>
+    <body>
+        <div class="container">
+            <h2>Student Registration Form</h2>
+            <form id="registration-form">
+            <div class="form-group">
+                <lable for="name">Name:</lable>
+                <input type="text" id="name" name="name" required>
+
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="course">Course:</label>
+                <select id="course" name="course" required>
+                    <option value="front end developer">Front end developer</option>
+                    <option value="back end developer">Back end developer</option>
+                    <option value="software developer">Software developer</option>
+                    <option value="quality Analyst">Quqlity Analyst</option>
+                </select>
+                
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+        </div>
+
+        <script>
+            document.addEventListener("DOMContentLoaded" , function () {
+                const registrationForm = document.getElementById("registration-form");
+                
+                registrationForm.addEvantListener("Submit", function (e) {
+                    e.preventDefault();
+                    const name=document.getElementById("name").value;
+                    const email=document.getElementById("email").value;
+                    const course=document.getElementById("course").value;
+
+                    alter(`Registration successful:/nName:${name}\nEmail:${email}\nCourse:${course}`);
+                });
+            });
+
+        </script>
+        
+    </body>
+</html>
